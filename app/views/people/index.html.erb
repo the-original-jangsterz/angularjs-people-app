@@ -1,5 +1,5 @@
 <div ng-app="app">
-  <div ng-controller="peopleCtrl">
+  <div ng-controller="peopleCtrl" ng-init="setup()">
 
     <h4>Total number of people: {{ people.length }}</h4>
     <div ng-repeat="person in people">
