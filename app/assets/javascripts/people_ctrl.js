@@ -19,6 +19,9 @@
       };
       $http.post('/api/v1/people.json', params).then(function(response) {
         $scope.people.push(response.data);
+        $scope.errors = [];
+      }, function(errorResponse) {
+        $scope.errors = errorResponse.data.errors;
       });
     };
 
