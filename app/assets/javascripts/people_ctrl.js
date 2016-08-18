@@ -29,6 +29,10 @@
       $scope.people.splice(inputIndex, 1);
     };
 
+    $scope.setOrderAttribute = function(inputAttribute) {
+      $scope.orderAttribute = inputAttribute;
+    };
+
     window.$scope = $scope;
   });
 })();
