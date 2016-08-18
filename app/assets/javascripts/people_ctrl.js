@@ -30,6 +30,11 @@
     };
 
     $scope.setOrderAttribute = function(inputAttribute) {
+      if (inputAttribute !== $scope.orderAttribute) { // clicked on a different button
+        $scope.isOrderDescending = false;
+      } else { // clicked on the same button
+        $scope.isOrderDescending = !$scope.isOrderDescending;
+      }
       $scope.orderAttribute = inputAttribute;
     };
 
