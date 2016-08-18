@@ -10,7 +10,7 @@
     <div ng-repeat="person in people | filter: {name: nameFilter} | orderBy:orderAttribute:isOrderDescending">
       <h3 ng-click="toggleBio(person)">{{ person.name }}</h3>
       <p ng-class="{strike: person.bioVisible}">{{ person.bio }}</p>
-      <a href="#" ng-click="deletePerson($index)">Delete</a>
+      <a href="#" ng-click="deletePerson(person)">Delete</a>
     </div>
     <h2>Add a person</h2>
     <ul id="errors">

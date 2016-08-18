@@ -25,8 +25,9 @@
       });
     };
 
-    $scope.deletePerson = function(inputIndex) {
-      $scope.people.splice(inputIndex, 1);
+    $scope.deletePerson = function(inputPerson) {
+      var index = $scope.people.indexOf(inputPerson);
+      $scope.people.splice(index, 1);
     };
 
     $scope.setOrderAttribute = function(inputAttribute) {
