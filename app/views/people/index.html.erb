@@ -2,7 +2,15 @@
   <div ng-controller="peopleCtrl" ng-init="setup()">
 
     <h4>Total number of people: {{ people.length }}</h4>
-    <input ng-model="nameFilter">
+    <div>
+      <label>Filter name:</label>
+      <input ng-model="nameFilter" list="names">
+
+      <datalist id="names">
+        <option ng-repeat="person in people">{{ person.name }}</option>
+      </datalist>
+
+    </div>
     <table border=1>
       <tr>
         <th ng-click="setOrderAttribute('name')">Name {{ getSortIcon('name') }}</th>
