@@ -3,15 +3,17 @@
 
     <h4>Total number of people: {{ people.length }}</h4>
     <input ng-model="nameFilter">
-    <div>
-      <button ng-click="setOrderAttribute('name')">Order by name</button>
-      <button ng-click="setOrderAttribute('bio')">Order by bio</button>
-    </div>
-    <div ng-repeat="person in people | filter: {name: nameFilter} | orderBy:orderAttribute:isOrderDescending">
-      <h3 ng-click="toggleBio(person)">{{ person.name }}</h3>
-      <p ng-class="{strike: person.bioVisible}">{{ person.bio }}</p>
-      <a href="#" ng-click="deletePerson(person)">Delete</a>
-    </div>
+    <table border=1>
+      <tr>
+        <th ng-click="setOrderAttribute('name')">Order by name</th>
+        <th ng-click="setOrderAttribute('bio')">Order by bio</th>
+      </tr>
+      <tr ng-repeat="person in people | filter: {name: nameFilter} | orderBy:orderAttribute:isOrderDescending">
+        <td>{{ person.name }}</td>
+        <td>{{ person.bio }}</td>
+      </tr>
+    </table>
+
     <h2>Add a person</h2>
     <ul id="errors">
       <li ng-repeat="error in errors">{{ error }}</li>
