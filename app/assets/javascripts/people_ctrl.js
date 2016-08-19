@@ -41,7 +41,7 @@
 
     $scope.getSortIcon = function(inputOrderAttribute) {
       if (inputOrderAttribute === $scope.orderAttribute) {
-        return $scope.isOrderDescending ? 'v' : '^';
+        return $scope.isOrderDescending ? '\u2193' : '\u2191';
       } else {
         return '';
       }
